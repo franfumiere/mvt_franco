@@ -15,11 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from flia.views import Silvana, Fede, Lola
+#from flia.views import Silvana, Fede, Lola
+from .views import probando
+from flia.views import Silvana
+from flia.views import Fede 
+from flia.views import Lola 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('familiares/', Silvana),
-    path('familiares/', Lola),
-    path('familiares/', Fede)
+    #path('familiares/', Silvana, Lola, Fede), POR ALGÚN MOTIVO NO PUEDO PONER TODOS JUNTOS
+    path('probando/', probando),
+    path('familiares/', Silvana,),
+    path('fede/', Fede),
+    path('lola/', Lola)
+
+  
 ]
