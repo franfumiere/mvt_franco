@@ -1,19 +1,18 @@
-from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Familiar1, Amigo, Trabajos
 from django.template import loader
 
-def inicio(reuqest):
+def inicio(request):
     return render (request, "flia/inicio.html")
 
-def familia(reuqest):
+def familia(request):
     return render (request, "flia/familia.html")
 
-def amigos(reuqest):
+def amigos(request):
     return render (request, "flia/amigos.html")
 
-def trabajo(reuqest):
+def trabajo(request):
     return render (request, "flia/trabajos.html")
 
 
