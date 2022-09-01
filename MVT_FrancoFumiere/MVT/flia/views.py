@@ -1,7 +1,20 @@
+from urllib import request
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Familiar1
+from .models import Familiar1, Amigo, Trabajos
 from django.template import loader
+
+def inicio(reuqest):
+    return render (request, "flia/inicio.html")
+
+def familia(reuqest):
+    return render (request, "flia/familia.html")
+
+def amigos(reuqest):
+    return render (request, "flia/amigos.html")
+
+def trabajo(reuqest):
+    return render (request, "flia/trabajos.html")
 
 
 
@@ -28,6 +41,13 @@ def Fede(request):
     Fede.save()
     texto=f"Mi nombre es {Fede.nombre} y nací en {Fede.fecha_nacimiento}. A día de hoy, tengo {Fede.hijos} hijo"
     
+    return HttpResponse(texto)
+
+def Thomy(request):
+
+    Thomy=Amigo (nombre='Thomy',apodo='karate', de_donde='Colegio San Ana')
+    Thomy.save()
+    texto=f'Mi nombre es {Thomy.nombre}, me dicen {Thomy.apodo} y lo conozco a Franco de {Thomy.de_donde}.'
     return HttpResponse(texto)
 
 
